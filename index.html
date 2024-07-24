@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Portfolio</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <style>
+
+/* :root {
+      --bg-color: #fff;
+      --text-color: #000;
+      --navbar-bg-color: #343a40;
+      --btn-color: #fff;
+      --carousel-bg-color: rgb(150, 208, 208);
+    }
+
+    .dark-theme {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --navbar-bg-color: #212529;
+      --btn-color: #121212;
+      --carousel-bg-color: #444;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    } */
+
+            body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*Logo*/
+
+/* carousel img*/
+.small-img{
+  height: 500px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+ /* Custom CSS for carousel */
+ #carouselExampleIndicators{
+  background-color: rgb(150, 208, 208);
+ }
+
+ .modal-backdrop {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+        
+            <!-- place navbar here -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="imgs/logo.png" alt="Logo" height="50">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#about" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    About
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#academic">Academic</a></li>
+                                    <li><a class="dropdown-item" href="#non-academic">Non-Academic</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#about" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    My-Project
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#Project1">Project 1</a></li>
+                                    <li><a class="dropdown-item" href="#non-academic">Project 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#contact" id="navbarDropdownContact" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Contact
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownContact">
+                                    <li><a class="dropdown-item" href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></li>
+                                    <li><a class="dropdown-item" href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i> Instagram</a></li>
+                                    <li><a class="dropdown-item" href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i> Twitter</a></li>
+                                    <li><a class="dropdown-item" href="https://whatsapp.com" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#blog">Blog</a>
+                        </ul>
+                    </div>
+                    <div class="d-flex">
+                        <button id="theme-toggle" class="btn btn-light me-2">Toggle Theme</button>
+                        <button class="btn btn-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal"><a class="nav-link" href="login.html">Login/Signup</a></button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-indicators rounded">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-6 text-center">
+                                <h1>Web Development</h1>
+                                <p>Web development is the work involved in developing a website for the Internet (World Wide Web) or an intranet (a private network). It includes web design, web content development, client-side/server-side scripting, and network security configuration.</p>
+                                <a href="#" class="btn btn-primary">Hire Me</a>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="imgs/shi.jpg" class="d-block mx-auto img-fluid small-img shadow rounded" alt="Passport Size Photo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-6 text-center">
+                                <h1>Cyber Security</h1>
+                                <p>Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These cyberattacks are usually aimed at accessing, changing, or destroying sensitive information; extorting money from users; or interrupting normal business processes.</p>
+                                <a href="#" class="btn btn-primary">Hire Me</a>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="imgs/me.jpg" class="d-block mx-auto img-fluid small-img shadow rounded" alt="Passport Size Photo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-6 text-center">
+                                <h1>Hobbies</h1>
+                                <p>  </p>
+                                <a href="#" class="btn btn-primary">Hire Me</a>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="imgs/hie.jpg" class="d-block mx-auto img-fluid small-img shadow rounded" alt="Passport Size Photo" height="40">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- Login Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Login/Signup</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><a href="login.html" class="btn btn-primary w-100">Login</a></p>
+                        <p><a href="login.html" class="btn btn-secondary w-100">Signup</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <footer class="bg-dark text-light py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Footer content -->
+                        <h5>Contact Us</h5>
+                        <p>123 Street Name, City, Country</p>
+                        <p>Email: example@example.com</p>
+                        <p>Phone: +1234567890</p>
+                        <!-- Social Links -->
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i> Facebook</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i> Instagram</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i> Twitter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://whatsapp.com" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Google Map Embed -->
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3525.684744164728!2d88.50127641428767!3d27.25116768300557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3749173676d6fbab%3A0x75c872b7e5b8765f!2sSingtam%2C%20Sikkim%2C%20737202!5e0!3m2!1sen!2sin!4v1636567446612!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <!-- <script src="java.js"></script> -->
+        <script>
+            // Function to check if user has canceled the popup
+            function checkPopup() {
+                if (!sessionStorage.getItem('popupCancelled')) {
+                    var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                    loginModal.show();
+                }
+            }
+
+            // Event listener for modal close button
+            document.addEventListener('DOMContentLoaded', function () {
+                var modalCloseBtn = document.querySelector('.btn-close');
+                if (modalCloseBtn) {
+                    modalCloseBtn.addEventListener('click', function () {
+                        sessionStorage.setItem('popupCancelled', 'true');
+                    });
+                }
+
+                // Show the modal on page load
+                checkPopup();
+            });
+        </script>
+    </body>
+</html>

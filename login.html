@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login & Signup Form</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="title-text">
+      <div class="title login">Login Form</div>
+      <div class="title signup">Signup Form</div>
+    </div>
+    <div class="form-container">
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="login" checked>
+        <input type="radio" name="slide" id="signup">
+        <label for="login" class="slide login">Login</label>
+        <label for="signup" class="slide signup">Signup</label>
+        <div class="slider-tab"></div>
+      </div>
+      <div class="form-inner">
+        <form action="login.php" method="POST" class="login" onsubmit="return validateRecaptcha();">
+          <div class="field">
+            <input type="text" name="email" placeholder="Email Address" required onpaste="return false;">
+          </div>
+          <div class="field">
+            <input type="password" name="password" placeholder="Password" required onpaste="return false;">
+          </div>
+          <br>
+          <div class="g-recaptcha" data-sitekey="6LeumvIpAAAAANXK69XfOtIYA4a75yhYhmmeksLJ"></div>
+          <div class="remember-me">
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Remember Me</label>
+          </div>
+          <!-- Forgot Password Link -->
+          <div class="pass-link"><a href="forgot_password.php">Forgot password?</a></div>
+          <div id="countdown" style="color: red; font-size: 16px; display: none;"></div> <!-- Countdown timer -->
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input type="submit" value="Login">
+          </div>
+          <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+        </form>
+        <form action="connection.php" method="POST" class="signup">
+          <div class="field">
+            <input type="text" name="username" placeholder="Username" required onpaste="return false;"
+              pattern="[A-Za-z0-9]+" title="Username must contain only letters and numbers">
+          </div>
+          <div class="field">
+            <input type="text" name="email" placeholder="Email Address" required onpaste="return false;">
+          </div>
+          <div class="field">
+            <input type="text" name="phone" placeholder="Phone Number" required onpaste="return false;">
+          </div>
+          <div class="field">
+            <input type="password" name="password" placeholder="Password" required onpaste="return false;">
+          </div>
+          <div class="field">
+            <input type="password" name="confirmpassword" placeholder="Confirm Password" required onpaste="return false;">
+          </div>
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input type="submit" value="Signup">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="java.js"></script>
+  <script>
+    // Check if the user is locked out
+    document.addEventListener("DOMContentLoaded", function () {
+      if (sessionStorage.getItem('lockout_end_time')) {
+        let lockoutEndTime = parseInt(sessionStorage.getItem('lockout_end_time'));
+        let currentTime = Math.floor(Date.now() / 1000);
+
+        if (currentTime < lockoutEndTime) {
+          let remainingTime = lockoutEndTime - currentTime;
+          lockLoginForm(remainingTime);
+        }
+      }
+
+      // Check if the user is remembered
+      if (getCookie('remember_me')) {
+        window.location.href = 'dashboard.php';
+      }
+    });
+
+    function lockLoginForm(seconds) {
+      let loginForm = document.querySelector('.login form');
+      let countdownDiv = document.getElementById('countdown');
+      countdownDiv.style.display = 'block';
+
+      let countdown = seconds;
+
+      let interval = setInterval(function () {
+        countdown--;
+        countdownDiv.innerText = `Login locked for ${countdown} seconds`;
+
+        if (countdown <= 0) {
+          clearInterval(interval);
+          countdownDiv.style.display = 'none';
+          sessionStorage.removeItem('lockout_end_time');
+          window.location.href = 'login.html';
+        }
+      }, 1000);
+
+      // Disable form inputs and submit button during countdown
+      loginForm.querySelectorAll('input').forEach(input => input.disabled = true);
+      loginForm.querySelector('input[type="submit"]').value = 'Locked';
+    }
+
+    // Function to set a cookie
+    function setCookie(name, value, seconds) {
+      let expires = "";
+      if (seconds) {
+        let date = new Date();
+        date.setTime(date.getTime() + (seconds * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    // Function to get a cookie by name
+    function getCookie(name) {
+      let nameEQ = name + "=";
+      let ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+  </script>
+</body>
+
+</html>
